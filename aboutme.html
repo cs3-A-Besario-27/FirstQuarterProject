@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="abrei">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="revised" content="22/10/23">
+    <title>Abrielle's Blog</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', sans-serif;
+            font-style: italic;
+            background: linear-gradient(to right, #f8f0f3, #fcc9d5);
+        }
+
+        header {
+            background-color: #fcc9d5;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            display: flex;
+            padding: 20px;
+            opacity: 0;
+            animation: slideIn 1.5s forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h1,
+        h4,
+        nav {
+            margin: 0;
+        }
+
+        h1 {
+            color: rgb(120, 73, 73);
+            font-family: 'Georgia', serif;
+            margin-bottom: 0;
+        }
+
+        h4 {
+            color: #333;
+            font-weight: lighter;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        nav {
+            margin-top: 10px;
+            text-align: center;
+            letter-spacing: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            display: inline-block;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            letter-spacing: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fba9c4;
+            color: #f8f0f3;
+        }
+
+        nav a[href="aboutme.html"]:not(.active) {
+            background-color: #e07373;
+            color: #f8f0f3;
+        }
+
+        .photo {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .photo img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            outline: 3px solid #0c5472;
+            position: relative;
+        }
+
+        .welcome {
+            flex: 1;
+            color: #781249;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .welcome h1 {
+            color: #781249;
+            font-size: 38px;
+            margin-bottom: 0;
+        }
+
+        .welcome p {
+            font-size: 22px;
+            margin-bottom: 0;
+        }
+
+        .gettoknow {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .gtk-button {
+            background-color: #fcc9d5;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            font-size: 25px;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Times New Roman', cursive;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .gtk-button:hover {
+            background-color: #fba9c4;
+        }
+
+        .ikaduhaphoto {
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 50px;
+            margin-bottom: 40px;
+            animation: slideIn 1.5s forwards;
+            margin-top: 40px;
+        }
+
+        .ikaduhaphoto img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            float: right;
+            display: block;
+            margin-right: 30px;
+            outline: 3px solid #0c5472;
+            position: relative;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .info {
+            flex: 1;
+            color: #781249;
+            animation: slideIn 1.5s forwards;
+        }
+
+        .info h1 {
+            color: #781249;
+            font-size: 34px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+        }
+
+        .info p {
+            font-size: 22px;
+            margin-left: 40px;
+            margin-right: 40px;
+            text-align: justify;
+        }
+
+        .read {
+            margin-top: 0px;
+            clear: both;
+            text-align: left;
+            margin-left: 40px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            position: absolute;
+        }
+
+        .read a {
+            background-color: #fcc9d5;
+            text-decoration: none;
+            font-size: 25px;
+            color: #000;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+        }
+
+        .read a:hover {
+            background-color: #fba9c4;
+            color: #000000;
+        }
+
+        .buttonz {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 90px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 30px;
+        }
+
+        .home-button-box,
+        .contact-button-box {
+            flex: 1;
+        }
+
+        .home {
+            background-color: #ffcee1eb;
+            text-decoration: none;
+            color: #000;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border: 2px solid #000;
+            border-radius: 15px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 13px 13px;
+        }
+
+        .home:hover {
+            background-color: #fba9d7e4;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Abrielle's Blog ♡</h1>
+        <h4>"I promised that you'll never find another like me-e-e!"</h4>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="contactme.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <div class="anchor-section" id="home">
+        <div class="content">
+            <div class="photo">
+                <img src="abrel3.png" alt="Sample Photo">
+            </div>
+            <div class="welcome">
+                <h1>Who is Abrielle?</h1>
+                <p>I'm always looking for new experiences. I'm independent and outgoing, and I'm always looking for new ways to grow and learn. Get to know the details about myself here!</p>
+                <div class="gettoknow">
+                    <a href="aboutme1.html" class="gtk-button">Get to Know Me More!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="2ndcontent">
+        <div class="ikaduhaphoto">
+            <img src="aboutme2.jpg" alt="A photo of me">
+        </div>
+        <div class="info">
+            <h1>What are Abrielle's Hobbies & Interests?</h1>
+            <p>Ready to dive into the adventure of my hobbies? I'm eager to explore new ideas and learn new technical skills that will help me grow as a person!</p>
+
+            <div class="read">
+                <a href="readmore.html" style="text-decoration: none;">Click here to read!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonz">
+        <div class="home-button-box">
+            <a href="index.html" class="home" style="text-decoration: none;">&lt; Go back to 'Home' </a>
+        </div>
+        <div class="contact-button-box">
+            <a href="contactme.html" class="home" style="text-decoration: none;">Go to 'Contact Me' &gt;</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
